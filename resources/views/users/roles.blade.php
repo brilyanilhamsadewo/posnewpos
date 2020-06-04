@@ -1,9 +1,9 @@
 @extends('layouts.master')
-​
+
 @section('title')
     <title>Set Role</title>
 @endsection
-​
+
 @section('content')
     <div class="content-wrapper">
         <div class="content-header">
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-​
+
         <section class="content">
             <div class="container-fluid">
                 <div class="row">

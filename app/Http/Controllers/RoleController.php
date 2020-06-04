@@ -7,7 +7,6 @@ use Spatie\Permission\Models\Role;
 
 class RoleController extends Controller
 {
-    //melihat data
     public function index()
     {
         $role = Role::orderBy('created_at', 'DESC')->paginate(10);
@@ -19,7 +18,7 @@ class RoleController extends Controller
         $this->validate($request, [
             'name' => 'required|string|max:50'
         ]);
-    
+
         $role = Role::firstOrCreate(['name' => $request->name]);
         return redirect()->back()->with(['success' => 'Role: <strong>' . $role->name . '</strong> Ditambahkan']);
     }
