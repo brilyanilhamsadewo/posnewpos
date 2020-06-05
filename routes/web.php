@@ -35,5 +35,12 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/users/permission', 'UserController@addPermission')->name('users.add_permission');
     Route::get('/users/role-permission', 'UserController@rolePermission')->name('users.roles_permission');
     Route::put('/users/permission/{role}', 'UserController@setRolePermission')->name('users.setRolePermission');
-    
+
+
+    //nanti set ulang
+    Route::get('/transaksi', 'OrderController@addOrder')->name('order.transaksi');
+    Route::get('/checkout', 'OrderController@checkout')->name('order.checkout');
+    Route::post('/checkout', 'OrderController@storeOrder')->name('order.storeOrder');
+    Route::get('/checkout', 'OrderController@checkout')->name('order.checkout');
+    Route::post('/checkout', 'OrderController@storeOrder')->name('order.storeOrder');
 });

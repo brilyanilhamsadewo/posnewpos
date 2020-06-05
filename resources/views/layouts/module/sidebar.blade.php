@@ -81,6 +81,14 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('order.transaksi') }}" class="nav-link">
+                        <i class="nav-icon fa fa-shopping-cart"></i>
+                        <p>
+                            Transaksi
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-item has-treeview">
                     <a class="nav-link" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
