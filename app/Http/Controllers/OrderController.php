@@ -228,4 +228,15 @@ class OrderController extends Controller
     {
         return (new OrderInvoice($invoice))->download('invoice-' . $invoice . '.xlsx');
     }
+
+    //coba
+    public function invoicePdfCheckout($invoice)
+    {
+        $order = Order::where('invoice', $invoice)
+            ->with('customer', 'order_detail', 'order_detail.product')->first();
+        $pdf = PDF::setOptions(['dpi' => 100, 'defaultFont' => 'sans-serif'])
+            ->loadView('orders.cart', compact('order'));
+        return $pdf->stream();
+    }
+
 }

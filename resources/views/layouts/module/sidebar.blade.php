@@ -29,6 +29,8 @@
                         </p>
                     </a>
                 </li>
+
+                @hasrole('admin')
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-server"></i>
@@ -52,6 +54,9 @@
                         </li>
                     </ul>
                 </li>
+                @endhasrole
+
+                @hasrole('admin')
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-users"></i>
@@ -81,6 +86,9 @@
                         </li>
                     </ul>
                 </li>
+                @endhasrole
+
+                @hasanyrole('admin|kasir')
                 <li class="nav-item">
                     <a href="{{ route('order.transaksi') }}" class="nav-link">
                         <i class="nav-icon fa fa-shopping-cart"></i>
@@ -89,6 +97,9 @@
                         </p>
                     </a>
                 </li>
+                @endhasanyrole
+
+                @hasrole('admin')
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-shopping-bag"></i>
@@ -106,6 +117,8 @@
                         </li>
                     </ul>
                 </li>
+                @endhasrole
+
                 <li class="nav-item has-treeview">
                     <a class="nav-link" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
